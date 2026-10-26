@@ -19,6 +19,12 @@ public class ArquivoProdutos
     {
         var produtos = new List<Produto>();
 
+        if (!File.Exists(caminho))
+        {
+            Console.WriteLine($"Arquivo {caminho} nao existe, comecando com lista vazia");
+            return produtos;
+        }
+
         foreach (var linha in File.ReadLines(caminho))
         {
             var campos = linha.Split(';');

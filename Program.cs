@@ -17,3 +17,6 @@ foreach (var p in carregados)
 {
     Console.WriteLine(p);
 }
+
+Console.WriteLine();
+ArquivoProdutos.Carregar("nao_existe.csv");
