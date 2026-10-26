@@ -14,4 +14,20 @@ public class ArquivoProdutos
             escritor.WriteLine(linha);
         }
     }
+
+    public static List<Produto> Carregar(string caminho)
+    {
+        var produtos = new List<Produto>();
+
+        foreach (var linha in File.ReadLines(caminho))
+        {
+            var campos = linha.Split(';');
+            var nome = campos[0];
+            var preco = decimal.Parse(campos[1], CultureInfo.InvariantCulture);
+            var quantidade = int.Parse(campos[2]);
+            produtos.Add(new Produto(nome, preco, quantidade));
+        }
+
+        return produtos;
+    }
 }

@@ -10,3 +10,10 @@ var produtos = new List<Produto>
 var caminho = "produtos.csv";
 ArquivoProdutos.Salvar(caminho, produtos);
 Console.WriteLine($"Produtos salvos em {caminho}");
+
+var carregados = ArquivoProdutos.Carregar(caminho);
+Console.WriteLine("\nProdutos lidos de volta:");
+foreach (var p in carregados)
+{
+    Console.WriteLine(p);
+}
