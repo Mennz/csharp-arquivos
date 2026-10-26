@@ -7,7 +7,6 @@ var produtos = new List<Produto>
     new Produto("Acucar", 5.20m, 15)
 };
 
-foreach (var p in produtos)
-{
-    Console.WriteLine(p);
-}
+var caminho = "produtos.csv";
+ArquivoProdutos.Salvar(caminho, produtos);
+Console.WriteLine($"Produtos salvos em {caminho}");
